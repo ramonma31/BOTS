@@ -1,0 +1,114 @@
+        self.api1 = '5889355863:AAFsSSfMfpKyigvIXMULytHDeTA141a_olk'
+        self.api2 = '5982431594:AAHoSiZo18nVdtyIZQre4BCLQK4EtTvQzxQ'
+        self.canal = '@imperio_sinais_gratis'
+
+if numero == 4:
+            bot_enviar.send_sticker(canal, em_analise)
+            while True:
+                try:
+                    update_id = bot_corretor.update_id()
+                    message_id = bot_corretor.message_id(update_id)
+                except:
+                    pass
+                try:
+                    bot_blaze = Blaze_sinais.bot_blaze()
+                    atualizacao = bot_blaze.sondar_resultado()
+                    status = bot_blaze.status(atualizacao)
+                except ConnectionError:
+                    continue
+                if status == 'complete':
+                    cor = bot_blaze.ult_cor(atualizacao)
+                    numero = bot_blaze.ult_numero(atualizacao)
+                    lista_cont.append(numero)
+                    lista_cont.copy()
+                    sleep(4.7)
+                else:
+                    continue
+                if len(lista_cont) == 5:
+                    bot_enviar.delete_message(canal, message_id)
+                    bot_enviar.send_message(canal, preto)
+                if len(lista_cont) == 6:
+                    if cor == '⬛️' or cor == '⬜️':
+                        bot_enviar.send_sticker(canal, win_sem_gale)
+                        lista_cont.clear()
+                        break
+                    else:
+                        bot_enviar.send_message(canal, gale1)
+                        continue
+                if len(lista_cont) == 7:
+                    if cor == '⬛️' or cor == '⬜️':
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_sticker(canal, win_no_gale)
+                        lista_cont.clear()
+                        break
+                    else:
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_message(canal, gale2)
+                        continue
+                if len(lista_cont) == 8:
+                    if cor == '⬛️' or cor == '⬜️':
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_sticker(canal, win_no_gale)
+                        lista_cont.clear()
+                        break
+                    else:
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_sticker(canal, loss)
+                        lista_cont.clear()
+                        break
+        if numero == 8:
+            bot_enviar.send_sticker(canal, em_analise)
+            while True:
+                try:
+                    update_id = bot_corretor.update_id()
+                    message_id = bot_corretor.message_id(update_id)
+                except:
+                    pass
+                try:
+                    bot_blaze = Blaze_sinais.bot_blaze()
+                    atualizacao = bot_blaze.sondar_resultado()
+                    status = bot_blaze.status(atualizacao)
+                except ConnectionError:
+                    continue
+                if status == 'complete':
+                    cor = bot_blaze.ult_cor(atualizacao)
+                    numero = bot_blaze.ult_numero(atualizacao)
+                    lista_cont.append(numero)
+                    lista_cont.copy()
+                    sleep(4.7)
+                else:
+                    continue
+                if len(lista_cont) == 9:
+                    bot_enviar.delete_message(canal, message_id)
+                    bot_enviar.send_message(canal, vermelho)
+                if len(lista_cont) == 10:
+                    if cor == '🟥' or cor == '⬜️':
+                        bot_enviar.send_sticker(canal, win_sem_gale)
+                        lista_cont.clear()
+                        break
+                    else:
+                        bot_enviar.send_message(canal, gale1)
+                        continue
+                if len(lista_cont) == 11:
+                    if cor == '🟥' or cor == '⬜️':
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_sticker(canal, win_no_gale)
+                        lista_cont.clear()
+                        break
+                    else:
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_message(canal, gale2)
+                        continue
+                if len(lista_cont) == 12:
+                    if cor == '🟥' or cor == '⬜️':
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_sticker(canal, win_no_gale)
+                        lista_cont.clear()
+                        break
+                    else:
+                        bot_enviar.delete_message(canal, message_id)
+                        bot_enviar.send_sticker(canal, loss)
+                        lista_cont.clear()
+                        break
+                else:
+                    continue       
