@@ -1,7 +1,7 @@
 import requests
 import json
 from datetime import datetime
-from pytz import timezone   
+from pytz import timezone
 
 class bot_blaze:
     def __init__(self):
